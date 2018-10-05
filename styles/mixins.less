@@ -1,0 +1,68 @@
+@import "mixins/_button";
+@import "mixins/_elevation";
+
+.border-top(@color: @border-color, @height: 1px) {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: @height;
+    border-top: @height solid @color;
+    color: @color;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+}
+
+.border-bottom(@color: @border-color, @height: 1px) {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -@height;
+    height: @height;
+    border-bottom: @height solid @color;
+    color: @color;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+}
+
+.clearfix() {
+    clear: both;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.arrow() {
+    content: " ";
+    display: inline-block;
+    height: @cell-ft-arrow;
+    width: @cell-ft-arrow;
+    border-width: 1px 1px 0 0;
+    border-color: #c3c3c3;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -@cell-ft-arrow/2 - 1;
+    right: 0;
+}
+
+.input-placeholder(@color: @input-color-placeholder) {
+    // Firefox
+    &::-moz-placeholder {
+        color: @color;
+        opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+    &:-ms-input-placeholder { color: @color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}

@@ -1,0 +1,32 @@
+.@{prefix}-forms {
+
+    .@{prefix}-cell__form {
+        padding: 0 16px;
+        &:after {
+            left: 0;
+        }
+    }
+
+    .@{prefix}-input {
+        height: @input-default-height;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 14px;
+        line-height: 1;
+        -webkit-appearance: none;
+        color: @text-default;
+
+        .input-placeholder();
+    }
+
+    .@{prefix}-cell__hd {
+        min-width: @label-width;
+    }
+}
+
+

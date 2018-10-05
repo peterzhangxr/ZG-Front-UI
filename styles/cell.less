@@ -1,0 +1,94 @@
+.@{prefix}-cells{
+    background-color: #fff;
+    margin-top: 0;
+    & + .@{prefix}-cells {
+        margin-top: @cells-padding-horizontal;
+    }
+    &__title {
+        font-size: 12px;
+        color: @text-light;
+        font-weight: normal;
+        padding: 5px @cell-padding-vertical;
+        &__warning {
+            background: url("../assets/images/warning.png") no-repeat @cell-padding-vertical center;
+            background-size: 16px 16px;
+            text-indent: 21px;
+        }
+    }
+
+    > .@{prefix}-cell:last-child {
+        &:after {
+            border: none;
+        }
+    }
+
+}
+
+.@{prefix}-cell {
+    position: relative;
+    padding: @cell-padding-horizontal @cell-padding-vertical;
+    display: flex;
+    align-items: center;
+    min-height: @cell-default-height;
+    &:after {
+        .border-bottom(@cell-border-color);
+        left: @cell-padding-vertical;
+    }
+
+    &__hd {
+        color: @text-default;
+        font-size: 14px;
+    }
+    &__bd {
+        font-size: 14px;
+        color: @text-dark;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &__ft {
+        color: @text-light;
+        font-size: 14px;
+        position: relative;
+        padding-right: @cell-ft-padding;
+        &:after {
+            .arrow()
+        }
+
+        &__none {
+            padding-right: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    &__none {
+        padding-bottom: 0;
+        &:after {
+            border: none;
+        }
+    }
+
+    &__icon {
+        >.@{prefix}-cell__hd {
+            margin-right: 10px;
+        }
+        &:after {
+            left: 42px;
+        }
+    }
+    &__label {
+        font-size: 14px;
+        color: @text-default;
+        display: block;
+    }
+    &__start {
+        align-items: flex-start;
+    }
+    &__end {
+        align-items: flex-end;
+    }
+
+}
