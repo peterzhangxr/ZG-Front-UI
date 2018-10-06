@@ -2,7 +2,7 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    padding: @card-padding;
+    padding: 12px 18px;
     transition: .5s cubic-bezier(.25,.8,.5,1);
     z-index: @dialog-default-index + 300;
     transform: translate(-50%, -50%);
@@ -10,7 +10,6 @@
     text-align: center;
     font-size: 14px;
     pointer-events: none;
-    min-width: 30%;
     &:before {
         position: absolute;
         content: '';
@@ -26,14 +25,38 @@
         border-radius: 4px;
     }
 
+
+
     &__active {
         &:before {
             opacity: 0.85;
         }
     }
 
-    &__loading, &__error, &__success {
-        font-size: 42px;
-        margin-bottom: 12px;
+    &__success, &__error {
+        width: 105px;
+        height: 105px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__success {
+        .@{prefix}-toast__icon {
+            background-image: url("../assets/images/success.png");
+        }
+    }
+
+    &__error {
+        .@{prefix}-toast__icon {
+            background-image: url("../assets/images/error.png");
+        }
+    }
+
+    &__icon {
+        height: 64px;
+        background-size: auto 100%;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

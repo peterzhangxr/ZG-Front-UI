@@ -8,6 +8,9 @@ import Select from './components/select'
 import Button from './components/button'
 import { Form, Item as FormItem, ItemFt as FormItemFt} from './components/form'
 import Indicator from './components/indicator'
+import Toast from './components/toast'
+import Message from './components/message'
+import ActionSheet from './components/actionsheet'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -30,6 +33,9 @@ const install = (Vue, config = {})=> {
     Vue.component('zButton', Button)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
+    Vue.$toast = Vue.prototype.$toast = Toast
+    Vue.$message = Vue.prototype.$message = Message
+    Vue.$actionsheet = Vue.prototype.$actionsheet = ActionSheet
 
 }
 

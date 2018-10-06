@@ -33,6 +33,9 @@
                 <z-form-item>
                     <z-button color="primary" block @click.native="test">保存</z-button>
                 </z-form-item>
+                <z-form-item>
+                    <z-button color="primary" block @click.native="test1">保存</z-button>
+                </z-form-item>
             </z-form>
         </div>
     </div>
@@ -49,9 +52,21 @@
         },
         methods: {
             test() {
+                /*
+                this.$actionsheet.open([{
+                    label: '示例菜单'
+                }])*/
                 this.$indicator.open()
                 setTimeout(() => {
                     this.$indicator.close()
+                }, 3000)
+            },
+            test1() {
+                this.$actionsheet([{
+                    label: '示例菜单222'
+                }])
+                setTimeout(() => {
+                    //this.$indicator.close()
                 }, 3000)
             }
         }
