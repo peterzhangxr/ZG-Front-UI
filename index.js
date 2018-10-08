@@ -11,6 +11,7 @@ import Indicator from './components/indicator'
 import Toast from './components/toast'
 import Message from './components/message'
 import ActionSheet from './components/actionsheet'
+import Picture from './components/picture'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -31,6 +32,7 @@ const install = (Vue, config = {})=> {
     Vue.component('zFormItemFt', FormItemFt)
     Vue.component('zSelect', Select)
     Vue.component('zButton', Button)
+    Vue.component('zPicture', Picture)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast

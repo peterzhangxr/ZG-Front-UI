@@ -17,4 +17,8 @@ export default [{
     path: '/button',
     name: 'button',
     component: resolve => require(['./views/button.vue'], resolve)
+}, {
+    path: '/picture',
+    name: 'picture',
+    component: resolve => require(['./views/picture.vue'], resolve)
 }]
