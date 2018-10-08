@@ -23,16 +23,10 @@
     import cx from 'classnames'
     export default{
         props: {
+            value: Array,
             domain: {
                 type: String,
-                default: '
-                '
-            },
-            list: {
-                type: Array,
-                default: () => {
-                    return []
-                }
+                default: ''
             },
             thumb: String,
             origin: String,
@@ -45,9 +39,19 @@
         },
         data(){
             return{
-                msg:'hello vue'
+                list: []
             }
         },
+
+        watch: {
+            value(val) {
+                this.list = val
+            },
+            list(val) {
+                this.$emit('input', val)
+            }
+        },
+
         computed: {
             classes() {
                 return [
