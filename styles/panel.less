@@ -5,6 +5,11 @@
     background-color: #fff;
     &__hd {
         position: relative;
+        .@{prefix}-cell {
+            &:after {
+                left: 0;
+            }
+        }
     }
     &__bd {
         position: relative;
@@ -36,6 +41,12 @@
         position: relative;
         &:before {
             .border-top();
+        }
+
+        &__none {
+            &:before {
+                border: none;
+            }
         }
     }
 

@@ -38,20 +38,20 @@
 
         },
         data(){
-            return{
-                list: []
+            return {
+                list: this.value
             }
         },
 
         watch: {
             value(val) {
+                console.log(val)
                 this.list = val
             },
             list(val) {
                 this.$emit('input', val)
             }
         },
-
         computed: {
             classes() {
                 return [
@@ -61,9 +61,10 @@
         },
         methods:{
             getThumb(picture) {
+                console.log(picture)
                 if (this.thumb && picture[this.thumb])  {
                     return picture[this.thumb]
-                } else if (typeof picture == 'string') {
+                } else if (typeof picture === 'string') {
                     //todo
                     //check是否正常的url
                     return picture

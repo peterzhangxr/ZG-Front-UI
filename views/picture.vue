@@ -4,15 +4,15 @@
             <h1>Picture</h1>
         </div>
         <div class="page__bd" style="background: #fff">
-            <z-picture></z-picture>
+            <z-picture v-model="images"></z-picture>
         </div>
     </div>
 </template>
 <script>
     export default{
         data(){
-            return{
-                msg:'hello vue'
+            return {
+                images: ['https://placehold.it/84x84', 'https://placehold.it/84x84']
             }
         },
         components:{
