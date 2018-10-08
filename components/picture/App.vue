@@ -23,10 +23,15 @@
     import cx from 'classnames'
     export default{
         props: {
+            domain: {
+                type: String,
+                default: '
+                '
+            },
             list: {
                 type: Array,
                 default: () => {
-                    return ['https://cn.vuejs.org/images/logo.png']
+                    return []
                 }
             },
             thumb: String,
