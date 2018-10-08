@@ -8,6 +8,7 @@
                :disabled="disabled"
                :placeholder="placeholder"
                :pattern="pattern"
+               :style="styles"
                :accept="accept"/>
     </div>
 </template>
@@ -24,7 +25,18 @@
             readonly: Boolean,
             disabled: Boolean,
             pattern: String,
-            accept: String
+            accept: String,
+            align: {
+                type: String,
+                default: 'left'
+            }
+        },
+        computed: {
+            styles() {
+                return {
+                    textAlign: this.align
+                }
+            }
         },
         data() {
             return {

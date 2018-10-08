@@ -7,7 +7,7 @@
             <z-cell-title warning>请绑定持卡人本人的银行卡</z-cell-title>
             <z-form>
                 <z-form-item label="电话号码">
-                    <z-input type="text" v-model="mobile" placeholder="这是提示文字"></z-input>
+                    <z-input type="text" align="right" v-model="mobile" placeholder="这是提示文字"></z-input>
                 </z-form-item>
                 <z-form-item label="电话号码">
                     <z-input type="text" v-model="mobile" placeholder="这是提示文字"></z-input>
