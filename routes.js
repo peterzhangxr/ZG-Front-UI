@@ -21,4 +21,8 @@ export default [{
     path: '/picture',
     name: 'picture',
     component: resolve => require(['./views/picture.vue'], resolve)
+}, {
+    path: '/panel',
+    name: 'panel',
+    component: resolve => require(['./views/panel.vue'], resolve)
 }]

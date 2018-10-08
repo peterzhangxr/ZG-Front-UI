@@ -1,7 +1,9 @@
 /**
  * Created by peterzhang on 2018/10/4.
  */
-import { Cells, CellsTitle, Cell, CellHd, CellBd, CellFt } from './components/cell'
+import {
+    Cells, CellsTitle, Cell, CellHd, CellBd, CellFt
+} from './components/cell'
 import Switch from './components/switch'
 import Input from './components/input'
 import Select from './components/select'
@@ -12,6 +14,12 @@ import Toast from './components/toast'
 import Message from './components/message'
 import ActionSheet from './components/actionsheet'
 import Picture from './components/picture'
+import { Panel, PanelHd, PanelBd, PanelFt } from './components/panel'
+import {
+    Box, BoxHd, BoxBd, BoxFt, BoxTitle, BoxSubTitle
+} from './components/box'
+
+import Avatar from './components/avatar'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -33,6 +41,17 @@ const install = (Vue, config = {})=> {
     Vue.component('zSelect', Select)
     Vue.component('zButton', Button)
     Vue.component('zPicture', Picture)
+    Vue.component('zPanel', Panel)
+    Vue.component('zPanelHd', PanelHd)
+    Vue.component('zPanelBd', PanelBd)
+    Vue.component('zPanelFt', PanelFt)
+    Vue.component('zBox', Box)
+    Vue.component('zBoxHd', BoxHd)
+    Vue.component('zBoxBd', BoxBd)
+    Vue.component('zBoxFt', BoxFt)
+    Vue.component('zBoxTitle', BoxTitle)
+    Vue.component('zBoxSubTitle', BoxSubTitle)
+    Vue.component('zAvatar', Avatar)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast
