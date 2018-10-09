@@ -17,6 +17,10 @@
                     <z-cell-bd>按钮控件</z-cell-bd>
                     <z-cell-ft></z-cell-ft>
                 </z-cell>
+                <z-cell icon :to="{name: 'tabbar'}">
+                    <z-cell-bd>Tabbar</z-cell-bd>
+                    <z-cell-ft></z-cell-ft>
+                </z-cell>
             </z-cell-container>
         </div>
     </div>

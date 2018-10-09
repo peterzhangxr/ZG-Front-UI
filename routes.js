@@ -25,4 +25,8 @@ export default [{
     path: '/panel',
     name: 'panel',
     component: resolve => require(['./views/panel.vue'], resolve)
+}, {
+    path: '/tabbar',
+    name: 'tabbar',
+    component: resolve => require(['./views/tabbar.vue'], resolve)
 }]

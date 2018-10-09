@@ -3,6 +3,17 @@
     background-color: @tabbar-background-color;
     width: 100%;
     height: @tabbar-height;
+    position: relative;
+
+    &:before {
+        .border-top(@tabbar-border-color);
+    }
+
+    &__container {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
 
     &__item {
         flex: 1;
@@ -46,7 +57,9 @@
     }
 
     &__content {
-        padding-bottom: @tabbar-height + 1;
-        height: 100%;
+        height: calc(100vh - @tabbar-height);
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: @bg-default;
     }
 }

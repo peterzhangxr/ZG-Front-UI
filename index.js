@@ -20,6 +20,7 @@ import {
 } from './components/box'
 
 import Avatar from './components/avatar'
+import Tabbar from './components/tabbar'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -52,6 +53,7 @@ const install = (Vue, config = {})=> {
     Vue.component('zBoxTitle', BoxTitle)
     Vue.component('zBoxSubTitle', BoxSubTitle)
     Vue.component('zAvatar', Avatar)
+    Vue.component('zTabbar', Tabbar)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast
