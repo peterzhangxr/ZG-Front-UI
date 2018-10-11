@@ -1,16 +1,13 @@
 <template>
-    <div>
-        <label v-if="label" class="su-cell__label">{{ label }}</label>
-        <input :type="type"
-               v-model.trim="current"
-               class="zg-input"
-               :readonly="readonly"
-               :disabled="disabled"
-               :placeholder="placeholder"
-               :pattern="pattern"
-               :style="styles"
-               :accept="accept"/>
-    </div>
+    <input :type="type"
+           v-model.trim="current"
+           class="zg-input"
+           :readonly="readonly"
+           :disabled="disabled"
+           :placeholder="placeholder"
+           :pattern="pattern"
+           :style="styles"
+           :accept="accept"/>
 </template>
 <script>
     export default{

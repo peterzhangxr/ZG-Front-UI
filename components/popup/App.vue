@@ -17,7 +17,7 @@
         },
         data(){
             return {
-                visible: false
+                visible: this.value
             }
         },
         computed: {

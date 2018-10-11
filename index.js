@@ -23,6 +23,7 @@ import Avatar from './components/avatar'
 import Tabbar from './components/tabbar'
 import {Code as SmsCode } from './components/sms'
 import Popup from './components/popup'
+import Picker from './components/picker'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -63,6 +64,7 @@ const install = (Vue, config = {})=> {
     Vue.$toast = Vue.prototype.$toast = Toast
     Vue.$message = Vue.prototype.$message = Message
     Vue.$actionsheet = Vue.prototype.$actionsheet = ActionSheet
+    Vue.$picker = Vue.prototype.$picker = Picker
 
 }
 
