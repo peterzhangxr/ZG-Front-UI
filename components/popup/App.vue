@@ -1,7 +1,7 @@
 <template>
     <div class="zg-popup__container" v-if="visible">
         <div class="zg-overlay" :class="{'zg-overlay__active': visible}" @click="visible = false"></div>
-        <div class="zg-popup" :class="classes">
+        <div class="zg-popup" :class="classes"  @click.self.stop="visible = false">
             <slot></slot>
         </div>
     </div>

@@ -23,6 +23,9 @@ class Toast {
             this.instance.$el.removeEventListener('transitionend', this.remove)
             this.instance.timer = setTimeout(() => {
                 this.close()
+                if (options.callback) {
+                    callback()
+                }
             }, this.instance.duration)
         })
     }
