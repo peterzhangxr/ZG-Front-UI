@@ -13,7 +13,11 @@
                 type: Number,
                 default: 1000
             },
-            type: String
+            type: String,
+            onClose: {
+                type: Function,
+                default: () => {}
+            }
         },
         computed: {
             classes() {

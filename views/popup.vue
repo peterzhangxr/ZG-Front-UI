@@ -4,7 +4,7 @@
             <h1>Popup{{visible}}</h1>
         </div>
         <div class="page__bd">
-            <z-button @click.native="$toast.open('的点点滴滴')">打开</z-button>
+            <z-button @click.native="close">打开</z-button>
         </div>
         <z-popup v-model="visible" right>
             <div style="width: 200px;height: 400px;background: #fff">
@@ -17,6 +17,17 @@
         data(){
             return{
                 visible: false
+            }
+        },
+        methods: {
+            close() {
+                this.$toast.open({
+                    text: 'abjaobjab',
+                    onClose
+                    : () => {
+                        console.log(this.visible)
+                    }
+                })
             }
         }
     }

@@ -15,6 +15,7 @@ class Toast {
         instance.type = options.type || ''
         instance.duration = options.duration || 2000
         instance.text = typeof options === 'string' ? options : options.text
+        instance.onClose = options.onClose || (() => {})
         document.body.appendChild(instance.$el)
         this.instance = instance
 
@@ -23,9 +24,7 @@ class Toast {
             this.instance.$el.removeEventListener('transitionend', this.remove)
             this.instance.timer = setTimeout(() => {
                 this.close()
-                if (options.callback) {
-                    callback()
-                }
+                this.instance.onClose()
             }, this.instance.duration)
         })
     }
