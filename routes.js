@@ -33,4 +33,8 @@ export default [{
     path: '/sms',
     name: 'sms',
     component: resolve => require(['./views/sms.vue'], resolve)
+}, {
+    path: '/popup',
+    name: 'popup',
+    component: resolve => require(['./views/popup.vue'], resolve)
 }]

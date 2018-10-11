@@ -25,6 +25,10 @@
                     <z-cell-bd>短信验证码控件</z-cell-bd>
                     <z-cell-ft></z-cell-ft>
                 </z-cell>
+                <z-cell icon :to="{name: 'popup'}">
+                    <z-cell-bd>Popup</z-cell-bd>
+                    <z-cell-ft></z-cell-ft>
+                </z-cell>
             </z-cell-container>
         </div>
     </div>
