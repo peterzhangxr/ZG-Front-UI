@@ -29,4 +29,8 @@ export default [{
     path: '/tabbar',
     name: 'tabbar',
     component: resolve => require(['./views/tabbar.vue'], resolve)
+}, {
+    path: '/sms',
+    name: 'sms',
+    component: resolve => require(['./views/sms.vue'], resolve)
 }]

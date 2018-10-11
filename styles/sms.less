@@ -1,0 +1,33 @@
+.@{prefix}-sms {
+    &-code {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__input {
+            flex: 0 0 42px;
+            width: @sms-code-default-width;
+            height: @sms-code-default-width;
+            border-radius: 3px;
+            border: 1px solid @sms-code-default-border-color;
+            margin-left: 18px;
+            display: flex;
+            align-items: center;
+
+            input {
+                text-align: center;
+                font-size: 14px;
+                color: @text-default;
+                width: 100%;
+                height: @sms-code-default-width - 10px;
+                line-height: @sms-code-default-width - 10px;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &__focus {
+                border-color: @color-primary;
+            }
+        }
+    }
+}

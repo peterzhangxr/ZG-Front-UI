@@ -21,6 +21,10 @@
                     <z-cell-bd>Tabbar</z-cell-bd>
                     <z-cell-ft></z-cell-ft>
                 </z-cell>
+                <z-cell icon :to="{name: 'sms'}">
+                    <z-cell-bd>短信验证码控件</z-cell-bd>
+                    <z-cell-ft></z-cell-ft>
+                </z-cell>
             </z-cell-container>
         </div>
     </div>

@@ -21,6 +21,7 @@ import {
 
 import Avatar from './components/avatar'
 import Tabbar from './components/tabbar'
+import {Code as SmsCode } from './components/sms'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -54,6 +55,7 @@ const install = (Vue, config = {})=> {
     Vue.component('zBoxSubTitle', BoxSubTitle)
     Vue.component('zAvatar', Avatar)
     Vue.component('zTabbar', Tabbar)
+    Vue.component('zSmsCode', SmsCode)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast
