@@ -21,7 +21,7 @@
         },
         methods: {
             handleClick() {
-                this.$picker()
+                this.$guide('share')
             }
         }
     }
