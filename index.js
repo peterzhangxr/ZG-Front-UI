@@ -25,6 +25,7 @@ import {Code as SmsCode } from './components/sms'
 import Popup from './components/popup'
 import Picker from './components/picker'
 import Guide from './components/guide'
+import { Tools, ToolsItem } from './components/tools'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -60,6 +61,8 @@ const install = (Vue, config = {})=> {
     Vue.component('zTabbar', Tabbar)
     Vue.component('zSmsCode', SmsCode)
     Vue.component('zPopup', Popup)
+    Vue.component('zTools', Tools)
+    Vue.component('zToolsItem', ToolsItem)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast

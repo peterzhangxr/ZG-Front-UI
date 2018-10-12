@@ -10,6 +10,9 @@
             <div style="width: 200px;height: 400px;background: #fff">
                 popup的内容</div>
         </z-popup>
+        <z-tools>
+            <z-tools-item label="我的图标"></z-tools-item>
+        </z-tools>
     </div>
 </template>
 <script>
