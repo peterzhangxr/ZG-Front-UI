@@ -13,7 +13,7 @@
                 </div>
                 <div v-else-if="bar.redirect" @click="handleClick(bar)" class="zg-tabbar__item">
                     <div class="zg-tabbar__icon">
-                        <img :src="bar.iconSelected"/>
+                        <img :src="bar.icon"/>
                     </div>
                     <div class="zg-tabbar__text">{{ bar.title }}</div>
                 </div>
