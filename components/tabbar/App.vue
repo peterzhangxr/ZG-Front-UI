@@ -11,6 +11,12 @@
                     </div>
                     <div class="zg-tabbar__text">{{ bar.title }}</div>
                 </div>
+                <div v-else-if="bar.redirect" @click="handleClick(bar)" class="zg-tabbar__item">
+                    <div class="zg-tabbar__icon">
+                        <img :src="bar.iconSelected"/>
+                    </div>
+                    <div class="zg-tabbar__text">{{ bar.title }}</div>
+                </div>
                 <router-link v-else :to="bar.to" class="zg-tabbar__item ">
                     <div class="zg-tabbar__icon">
                         <img :src="bar.icon"/>
@@ -33,6 +39,11 @@
                 required: true
             },
             fixed: Boolean
+        },
+        methods: {
+            handleClick(bar) {
+                bar.onClick()
+            }
         }
     }
 </script>
