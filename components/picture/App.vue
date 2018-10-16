@@ -4,7 +4,7 @@
             <div class="zg-grid" v-for="(picture, index) of images" @click="handleClick(index)">
                 <div class="zg-grid__square">
                     <div class="zg-grid__box zg-grid__flex">
-                        <img v-if="picture" :src="picture.src" />
+                        <img v-if="picture" :src="picture.src + '/b200'" />
                     </div>
                 </div>
             </div>
