@@ -16,9 +16,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.vue', 'json'],
-        alias: {
-
-        }
+        modules: ['node_modules']
     },
     module: {
         rules: [{

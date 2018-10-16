@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="page__hd">
-            <h1>Picture</h1>
+            <h1>Picture{{images.length}}</h1>
         </div>
         <div class="page__bd" style="background: #fff">
             <z-picture v-model="images"></z-picture>
@@ -12,7 +12,15 @@
     export default{
         data(){
             return {
-                images: ['https://placehold.it/84x84', 'https://placehold.it/84x84']
+                images: [{
+                    src: 'https://placekitten.com/600/400',
+                    w: 600,
+                    h: 400
+                }, {
+                    src: 'https://placekitten.com/1200/900',
+                    w: 1200,
+                    h: 900
+                }]
             }
         },
         components:{

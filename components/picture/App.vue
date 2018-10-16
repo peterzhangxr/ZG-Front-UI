@@ -1,26 +1,29 @@
 <template>
-    <div class="zg-grids" :class="classes">
-        <div class="zg-grid" v-for="picture of list">
-            <div class="zg-grid__square">
-                <div class="zg-grid__box zg-grid__flex">
-                    <img v-if="getThumb(picture)" :src="getThumb(picture)" />
+    <div class="zg-grids__container">
+        <div class="zg-grids" :class="classes">
+            <div class="zg-grid" v-for="(picture, index) of images" @click="handleClick(index)">
+                <div class="zg-grid__square">
+                    <div class="zg-grid__box zg-grid__flex">
+                        <img v-if="picture" :src="picture.src" />
+                    </div>
+                </div>
+            </div>
+            <div class="zg-grid" v-if="upload">
+                <div class="zg-grid__square">
+                    <div class="zg-grid__box zg-grid__input text-light">
+                        <img width="31" src="../../assets/images/picture.png" />
+                        图片
+                        <input type="file" accept="image/*" @change="handleUpload"/>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="zg-grid" v-if="upload">
-            <div class="zg-grid__square">
-                <div class="zg-grid__box zg-grid__input text-light">
-                    <img width="31" src="../../assets/images/picture.png" />
-                    图片
-                    <input type="file" @change="handleUpload($event.target)"/>
-                </div>
-            </div>
-        </div>
-
+        <photo-swipe v-model="visible" :remove="upload" :images.sync="images"></photo-swipe>
     </div>
 </template>
 <script>
     import cx from 'classnames'
+    import PhotoSwipe from './PhotoSwipe.vue'
     export default{
         props: {
             value: Array,
@@ -34,7 +37,7 @@
                 type: Number,
                 default: 3
             },
-            upload: Boolean
+            upload: Boolean,
             onUpload: {
                 type: Function,
                 default: () => {}
@@ -42,16 +45,19 @@
         },
         data(){
             return {
-                list: this.value
+                images: this.value,
+                visible: false,
+                current: 0
             }
         },
-
+        components: {
+            PhotoSwipe
+        },
         watch: {
             value(val) {
-                console.log(val)
-                this.list = val
+                this.images = val
             },
-            list(val) {
+            images(val) {
                 this.$emit('input', val)
             }
         },
@@ -73,8 +79,14 @@
                     return picture
                 }
             },
-            handleUpload(files) {
-                this.onUpload(files)
+
+            handleUpload(event) {
+                this.onUpload(event.target.files)
+            },
+
+            handleClick(index) {
+                this.current = index
+                this.visible = true
             }
         }
     }
