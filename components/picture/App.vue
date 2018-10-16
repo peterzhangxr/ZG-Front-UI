@@ -12,7 +12,7 @@
                 <div class="zg-grid__box zg-grid__input text-light">
                     <img width="31" src="../../assets/images/picture.png" />
                     图片
-                    <input type="file"/>
+                    <input type="file" @change="handleUpload($event.target)"/>
                 </div>
             </div>
         </div>
@@ -35,7 +35,10 @@
                 default: 3
             },
             upload: Boolean
-
+            onUpload: {
+                type: Function,
+                default: () => {}
+            }
         },
         data(){
             return {
@@ -69,6 +72,9 @@
                     //check是否正常的url
                     return picture
                 }
+            },
+            handleUpload(files) {
+                this.onUpload(files)
             }
         }
     }

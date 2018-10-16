@@ -75,5 +75,8 @@ const install = (Vue, config = {})=> {
 
 export default {
     install,
-    version
+    version,
+    Message,
+    Indicator,
+    Toast
 }
