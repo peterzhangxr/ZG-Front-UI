@@ -142,9 +142,17 @@
                     shareButtons: []
 
                 }
+                let items = []
+                for (let item of this.images) {
+                    items.push({
+                        src: item.src,
+                        w: item.width,
+                        h: item.height
+                    })
+                }
 
                 // Initializes and opens PhotoSwipe
-                let pswp = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, this.images, options);
+                let pswp = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 
                 pswp.listen('close', () => {
                     this.visible = false
