@@ -13,7 +13,7 @@
                     <div class="zg-grid__box zg-grid__input text-light">
                         <img width="31" src="../../assets/images/picture.png" />
                         图片
-                        <input type="file" accept="image/*" @change="handleUpload"/>
+                        <input type="file" accept="image/*" @change="handleUpload" multiple/>
                     </div>
                 </div>
             </div>
@@ -33,6 +33,7 @@
             },
             thumb: String,
             origin: String,
+            multiple: Boolean,
             col: {
                 type: Number,
                 default: 3
