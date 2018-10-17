@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <photo-swipe v-model="visible" :remove="upload" :images.sync="images"></photo-swipe>
+        <photo-swipe v-model="visible" :current="current" :remove="upload" :images.sync="images"></photo-swipe>
     </div>
 </template>
 <script>
