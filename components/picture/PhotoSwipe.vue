@@ -113,8 +113,8 @@
                     this.images.splice(this.pswp.getCurrentIndex(), 1)
                     this.init()
                 } else {
-                    this.pswp.close()
                     this.images.splice(this.pswp.getCurrentIndex(), 1)
+                    this.pswp.close()
                 }
             },
             init () {
@@ -127,7 +127,7 @@
                     captionEl: false,
                     fullscreenEl: false,
                     zoomEl: false,
-                    shareEl: true,
+                    shareEl: false,
                     counterEl: true,
                     arrowEl: false,
                     preloaderEl: false,
