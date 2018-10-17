@@ -31,7 +31,8 @@
                 type: Boolean,
                 default: true
             },
-            onCancel: Function
+            onCancel: Function,
+            onClick: Function
 
         },
         data(){
@@ -50,8 +51,8 @@
                 }
             },
             handleCallback(item) {
-                if (item.callback) {
-                    item.callback()
+                if (this.onClick) {
+                    this.onClick(item)
                 }
                 this.close()
             },

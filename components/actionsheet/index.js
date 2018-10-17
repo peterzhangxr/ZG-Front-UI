@@ -36,6 +36,7 @@ export default (options) =>  {
         }
 
         instance.cancelText = options.cancelText || '取消'
+        instance.onClick = options.onClick || (() => {})
     }
     instance.close = () => {
         instance.visible = false
