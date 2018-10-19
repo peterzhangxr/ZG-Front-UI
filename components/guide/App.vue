@@ -5,6 +5,9 @@
             <div class="zg-guide__share" v-if="type == 'share'">
                 <div class="zg-guide__share__box"></div>
             </div>
+            <div class="zg-guide__share__out" v-if="type == 'share_out'">
+                <div class="zg-guide__share__box"></div>
+            </div>
         </div>
     </div>
 </template>
