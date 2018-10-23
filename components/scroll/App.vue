@@ -28,7 +28,7 @@
             loading: {
                 type: Boolean,
                 default: false
-            }
+            },
 
             distance: {
                 type: Number,
@@ -45,7 +45,7 @@
 
             text: {
                 type: String,
-                default: '努力加载...'
+                default: '努力加载中...'
             }
 
         },
