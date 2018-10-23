@@ -4,7 +4,6 @@
             <div class="zg-sms-code__input" :class="{'zg-sms-code__input__focus': el.focus}">
                 <input ref="input" type="number"
                        v-model="el.value"
-                       :readonly="!el.focus"
                        @keyup="handleInput(el, index)"
                        @focus="handleFocus(el)"
                        @blur="handleFocus(el)"/>
@@ -17,7 +16,7 @@
         props: {
             num: {
                 type: Number,
-                default: 8
+                default: 6
             }
         },
 
@@ -32,7 +31,6 @@
 
             this.list = list
             this.$nextTick(() => {
-                console.log(this.$refs.input)
                 this.$refs.input[0].focus()
             })
         },
@@ -45,8 +43,9 @@
             handleFocus(input) {
                 input.focus = !input.focus
             },
+
             handleInput(el, index) {
-                //this.$refs.input[index + 1].focus()
+                this.$refs.input[index + 1].focus()
             }
         }
     }

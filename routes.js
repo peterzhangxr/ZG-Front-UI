@@ -37,4 +37,8 @@ export default [{
     path: '/popup',
     name: 'popup',
     component: resolve => require(['./views/popup.vue'], resolve)
+}, {
+    path: '/scroll',
+    name: 'scroll',
+    component: resolve => require(['./views/scroll.vue'], resolve)
 }]

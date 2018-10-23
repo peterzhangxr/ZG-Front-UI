@@ -13,13 +13,13 @@
         data(){
             return {
                 images: [{
-                    src: 'https://placekitten.com/600/400',
-                    w: 600,
-                    h: 400
+                    src: 'https://placehold.it/600x400',
+                    width: 600,
+                    height: 400
                 }, {
-                    src: 'https://placekitten.com/1200/900',
-                    w: 1200,
-                    h: 900
+                    src: 'https://placehold.it/1200x900',
+                    width: 1200,
+                    height: 900
                 }]
             }
         },

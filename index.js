@@ -26,6 +26,7 @@ import Popup from './components/popup'
 import Picker from './components/picker'
 import Guide from './components/guide'
 import { Tools, ToolsItem } from './components/tools'
+import Scroll from './components/scroll'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -63,6 +64,7 @@ const install = (Vue, config = {})=> {
     Vue.component('zPopup', Popup)
     Vue.component('zTools', Tools)
     Vue.component('zToolsItem', ToolsItem)
+    Vue.component('zScroll', Scroll)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast
