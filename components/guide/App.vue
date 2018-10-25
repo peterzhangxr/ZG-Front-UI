@@ -6,7 +6,10 @@
                 <div class="zg-guide__share__box"></div>
             </div>
             <div class="zg-guide__share__out" v-if="type == 'share_out'">
-                <div class="zg-guide__share__box"></div>
+                <div class="zg-guide__share__out__box"></div>
+            </div>
+            <div class="zg-guide__share__merchant" v-if="type == 'share_merchant'">
+                <div class="zg-guide__share__merchant__box"></div>
             </div>
         </div>
     </div>

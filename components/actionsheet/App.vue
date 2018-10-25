@@ -45,7 +45,7 @@
         methods: {
             getLabel(item) {
                 if (this.label && item[this.label]) {
-                    return item[this.labelKey]
+                    return item[this.label]
                 } else if (item['label']) {
                     return item['label']
                 }
