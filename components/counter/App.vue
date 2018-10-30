@@ -1,10 +1,10 @@
 <template>
     <div class="zg-number">
-        <div class="zg-number__btn simulate-ui su-minus" @click="minus"></div>
+        <div class="zg-number__btn simulate-ui su-minus" :class="{'zg-number__btn__primary': current > this.min}" @click="minus"></div>
         <div class="zg-number__input zg-number__input__readonly">
             {{ current }}
         </div>
-        <div class="zg-number__btn  simulate-ui su-plus" :class="classes" @click="plus"></div>
+        <div class="zg-number__btn  simulate-ui su-plus" :class="{'zg-number__btn__primary': current < this.max}" @click="plus"></div>
     </div>
 </template>
 <script>
@@ -30,6 +30,14 @@
         data(){
             return {
                 current: this.value
+            }
+        },
+        watch: {
+            value(val) {
+                this.current = val
+            },
+            current(val) {
+                this.$emit('input', val)
             }
         },
         computed: {
