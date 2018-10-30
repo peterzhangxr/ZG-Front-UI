@@ -6,6 +6,17 @@
     &:after {
         .border-bottom(@box-border-color);
     }
+    &__hd {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &__start {
+            justify-content: space-between;
+        }
+        &__center {
+            justify-content: center;
+        }
+    }
     &__bd {
         flex: 1;
         display: flex;

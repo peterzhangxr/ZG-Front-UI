@@ -27,6 +27,8 @@ import Picker from './components/picker'
 import Guide from './components/guide'
 import { Tools, ToolsItem } from './components/tools'
 import Scroll from './components/scroll'
+import Navbar from './components/navbar'
+import Counter from './components/counter'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -65,6 +67,8 @@ const install = (Vue, config = {})=> {
     Vue.component('zTools', Tools)
     Vue.component('zToolsItem', ToolsItem)
     Vue.component('zScroll', Scroll)
+    Vue.component('zNavbar', Navbar)
+    Vue.component('zCounter', Counter)
 
     Vue.$indicator = Vue.prototype.$indicator = Indicator;
     Vue.$toast = Vue.prototype.$toast = Toast

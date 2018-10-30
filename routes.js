@@ -41,4 +41,8 @@ export default [{
     path: '/scroll',
     name: 'scroll',
     component: resolve => require(['./views/scroll.vue'], resolve)
+}, {
+    path: '/navbar',
+    name: 'navbar',
+    component: resolve => require(['./views/navbar.vue'], resolve)
 }]
