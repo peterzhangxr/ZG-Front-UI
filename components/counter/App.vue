@@ -29,13 +29,13 @@
         },
         data(){
             return {
-                current: 0
+                current: this.value
             }
         },
         computed: {
             classes() {
                 return cx({
-                    [`su-number__btn__${this.color}`]: true
+                    [`zg-number__btn__${this.color}`]: true
                 })
             }
         },
