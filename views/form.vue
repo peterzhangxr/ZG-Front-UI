@@ -52,14 +52,11 @@
         },
         methods: {
             test() {
-                /*
-                this.$actionsheet.open([{
-                    label: '示例菜单'
-                }])*/
-                this.$indicator.open()
-                setTimeout(() => {
-                    this.$indicator.close()
-                }, 3000)
+
+                this.$picker([{
+                    label: '选项1',
+                    value: 1
+                }])
             },
             test1() {
                 this.$actionsheet([{

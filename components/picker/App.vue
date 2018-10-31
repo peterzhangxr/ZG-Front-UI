@@ -10,20 +10,8 @@
                 </div>
                 <div class="zg-picker__bd">
                     <div class="zg-picker__select"></div>
-                    <div ref="firstPicker" class="zg-picker__content">
-                        <div class="zg-picker__item">选项1</div>
-                        <div class="zg-picker__item">选项2</div>
-                        <div class="zg-picker__item">选项3</div>
-                        <div class="zg-picker__item">选项4</div>
-                        <div class="zg-picker__item">选项5</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
-                        <div class="zg-picker__item">选项6</div>
+                    <div ref="picker" class="zg-picker__content">
+                        <div v-for="option of items" class="zg-picker__item" v-html="getLabelText(option)"></div>
                     </div>
 
                 </div>
@@ -32,11 +20,17 @@
     </div>
 </template>
 <script>
-    import HammerJs from 'hammerjs'
+    import Swiper from 'swiper'
     export default{
         props: {
-            labelKey: String,
-            labelValue: String,
+            labelKey: {
+                type: String,
+                default: 'label'
+            },
+            labelValue: {
+                type: String,
+                default: 'value'
+            },
             labelChild: String,
             items: {
                 type: Array,
@@ -67,18 +61,19 @@
             }
         },
         mounted() {
-            const Swipe = new HammerJs.Swipe()
-            let firstHammer = new HammerJs.Manager(this.$refs.firstPicker)
-            firstHammer.on('swipe', (e) => {
-                console.log(e)
-            })
-
-            firstHammer.on('press', (e) => {
-                console.log(e)
+            let swiper = new Swiper(this.$refs.picker, {
+                direction: 'vertical'
             })
         },
 
         methods: {
+            getLabelText(option) {
+                if (option[this.labelKey]) {
+                    return option[this.labelKey]
+                }
+
+                return option
+            },
             handleConfirm() {
                 if (this.onConfirm) {
                     this.onConfirm()
