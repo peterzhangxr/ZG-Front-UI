@@ -30,6 +30,7 @@ export default (options = {}) =>  {
         instance.labelKey = options.labelKey || 'label'
         instance.labelValue = options.labelValue || 'value'
         instance.labelChild = options.labelChild || 'children'
+        instance.defaultValue = options.defaultValue || ''
 
         instance.confirmText = options.confirmText || '确定'
         instance.cancelText = options.cancelText || '取消'

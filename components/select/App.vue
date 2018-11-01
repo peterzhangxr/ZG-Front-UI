@@ -1,7 +1,7 @@
 <template>
     <select class="zg-input" v-model="current">
         <option value="" selected disabled>{{ placeholder }}</option>
-        <option v-for="option of options" :value="getLabel(option)">{{getValue(option)}}</option>
+        <option v-for="option of options" :value="getValue(option)">{{getLabel(option)}}</option>
     </select>
 </template>
 <script>
