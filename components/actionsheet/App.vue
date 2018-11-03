@@ -4,7 +4,7 @@
         <div class="zg-popup zg-popup__bottom" :class="{'zg-popup__active': visible}">
             <div class="zg-actionsheet">
                 <div class="zg-actionsheet__menu">
-                    <div v-for="item of list" class="zg-actionsheet__item" @click="handleCallback(item)">{{ getLabel(item) }}</div>
+                    <div v-for="item of list" class="zg-actionsheet__item" :class="{'text-' + item.color : true }" @click="handleCallback(item)">{{ getLabel(item) }}</div>
                 </div>
                 <div class="zg-actionsheet__action" v-if="cancel">
                     <div class="zg-actionsheet__item" @click="handleCancel">{{ cancelText }}</div>

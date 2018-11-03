@@ -45,4 +45,8 @@ export default [{
     path: '/navbar',
     name: 'navbar',
     component: resolve => require(['./views/navbar.vue'], resolve)
+}, {
+    path: '/dialog',
+    name: 'dialog',
+    component: resolve => require(['./views/dialog.vue'], resolve)
 }]
