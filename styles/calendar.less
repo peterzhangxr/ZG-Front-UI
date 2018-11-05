@@ -57,21 +57,19 @@
         }
     }
 
-    &__days {
-
-    }
-
     &__day {
-        &__row {
-            display: flex;
-            text-align: center;
-            padding: @calendar-day-row-padding 0;
-        }
+        flex-wrap: wrap;
+        justify-content: flex-start!important;
         &__cell {
             position: relative;
-            flex: 1;
+            flex: 0 0 14.2857143%;
             text-align: center;
             cursor: pointer;
+            padding: 8px 0;
+            &.opacity {
+                opacity: 0;
+                visibility: collapse;
+            }
         }
         &__disabled {
             opacity: 0.25;
@@ -98,7 +96,8 @@
     &__today, &__select {
         .@{prefix}-calendar__day {
             &__text {
-                border-radius: 50%;
+                //border-radius: 50%;
+                border-radius: 5px;
             }
         }
     }

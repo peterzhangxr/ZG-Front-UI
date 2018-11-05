@@ -1,16 +1,26 @@
 <template>
     <div>
-        <z-dialog></z-dialog>
     </div>
 </template>
 <script>
     export default{
-        data(){
+        data() {
             return{
                 msg:'hello vue'
             }
         },
         components:{
+        },
+        mounted() {
+            this.$dayPicker({
+                defaultValue: '10'
+            })
+            //this.$dialog()
+            /*
+            this.$actionsheet([{
+                label: '退出登录',
+                color: 'danger'
+            }])*/
         }
     }
 </script>

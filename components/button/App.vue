@@ -24,7 +24,8 @@
             flat: Boolean,
             circle: Boolean,
             round: Boolean,
-            loading: Boolean
+            loading: Boolean,
+            square: Boolean
         },
         computed: {
             classes() {
@@ -41,7 +42,9 @@
                     { 'zg-btn__flat': this.flat},
                     { 'zg-btn__circle': this.circle },
                     { 'zg-btn__round': this.round },
-                    { 'zg-btn__loading': this.loading }
+                    { 'zg-btn__loading': this.loading },
+                    { 'zg-btn__square': this.square }
+
                 ])
             },
             styles() {

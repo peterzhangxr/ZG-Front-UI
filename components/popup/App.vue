@@ -13,7 +13,8 @@
             value: Boolean,
             right: Boolean,
             bottom: Boolean,
-            left: Boolean
+            left: Boolean,
+            center: Boolean
         },
         data(){
             return {
@@ -27,6 +28,7 @@
                     { 'zg-popup__bottom': this.bottom },
                     { 'zg-popup__left': this.left },
                     { 'zg-popup__right': this.right },
+                    { 'zg-popup__center': this.center }
                 ]
             }
         },

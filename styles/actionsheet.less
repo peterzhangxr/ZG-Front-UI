@@ -24,4 +24,16 @@
     &__action {
         margin-top: @actionsheet-action-margin;
     }
+    &__content {
+        color: @text-light;
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.6;
+        padding: 18px 16px;
+        background-color: #fff;
+        position: relative;
+        &:after {
+            .border-bottom(@border-color)
+        }
+    }
 }

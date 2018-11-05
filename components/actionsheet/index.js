@@ -35,6 +35,10 @@ export default (options) =>  {
             instance.label = options.label
         }
 
+        if (options.content) {
+            instance.content = options.content
+        }
+
         instance.cancelText = options.cancelText || '取消'
         instance.onClick = options.onClick || (() => {})
     }

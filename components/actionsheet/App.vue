@@ -3,8 +3,11 @@
         <div class="zg-overlay" :class="{'zg-overlay__active': visible}" @click.prevent="handleCancel"></div>
         <div class="zg-popup zg-popup__bottom" :class="{'zg-popup__active': visible}">
             <div class="zg-actionsheet">
+                <div v-if="content" class="zg-actionsheet__content">{{ content }}</div>
                 <div class="zg-actionsheet__menu">
-                    <div v-for="item of list" class="zg-actionsheet__item" :class="{'text-' + item.color : true }" @click="handleCallback(item)">{{ getLabel(item) }}</div>
+                    <div v-for="item of list" class="zg-actionsheet__item"
+                         :class="{'text-primary': item.color == 'primary', 'text-error': item.color == 'error', 'text-danger': item.color == 'danger'}"
+                         @click="handleCallback(item)">{{ getLabel(item) }}</div>
                 </div>
                 <div class="zg-actionsheet__action" v-if="cancel">
                     <div class="zg-actionsheet__item" @click="handleCancel">{{ cancelText }}</div>
@@ -30,6 +33,10 @@
             cancel: {
                 type: Boolean,
                 default: true
+            },
+            content: {
+                type: String,
+                default: ''
             },
             onCancel: Function,
             onClick: Function

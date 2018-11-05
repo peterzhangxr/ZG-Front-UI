@@ -3,7 +3,7 @@
  */
 import App from './App.vue'
 import Vue from 'vue'
-const Dialog = Vue.extend(App)
+const Calendar = Vue.extend(App)
 let instance
 
 function remove(event) {
@@ -12,39 +12,14 @@ function remove(event) {
     }
 }
 
-export default (options = {}, ok = () => {}, cancel = () => {}) =>  {
+export default (options = {}) =>  {
     if (!instance) {
-        instance = new Dialog({
+        instance = new Calendar({
             el: document.createElement('div')
         })
     }
 
     if (instance.visible) return
-
-    instance.title = options.title || '提示'
-    if (options.cancel) {
-        instance.cancel = options.cancel
-    }
-
-    if (options.cancelText) {
-        instance.cancelText = options.cancelText
-    }
-
-    instance.onCancel = cancel
-
-    if (options.ok) {
-        instance.ok = options.ok
-    }
-
-    if (options.okText) {
-        instance.okText = options.okText
-    }
-
-    instance.onOk = ok
-
-    if (options.content) {
-        instance.content = options.content
-    }
 
     instance.close = () => {
         instance.visible = false

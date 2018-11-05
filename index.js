@@ -29,6 +29,9 @@ import { Tools, ToolsItem } from './components/tools'
 import Scroll from './components/scroll'
 import Navbar from './components/navbar'
 import Counter from './components/counter'
+import Dialog from './components/dialog'
+import Calendar from './components/calendar'
+import DayPicker from './components/dayPicker'
 
 const version = '0.0.1'
 const install = (Vue, config = {})=> {
@@ -76,7 +79,9 @@ const install = (Vue, config = {})=> {
     Vue.$actionsheet = Vue.prototype.$actionsheet = ActionSheet
     Vue.$picker = Vue.prototype.$picker = Picker
     Vue.$guide = Vue.prototype.$guide = Guide
-
+    Vue.$dialog = Vue.prototype.$dialog = Dialog
+    Vue.$calendar = Vue.prototype.$calendar = Calendar
+    Vue.$dayPicker = Vue.prototype.$dayPicker = DayPicker
 }
 
 export default {
