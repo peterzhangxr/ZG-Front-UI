@@ -11,6 +11,9 @@
             <div class="zg-guide__share__merchant" v-if="type == 'share_merchant'">
                 <div class="zg-guide__share__merchant__box"></div>
             </div>
+            <div class="zg-guide__share__upgrade" v-if="type == 'share_upgrade'">
+                <div class="zg-guide__share__upgrade__box"></div>
+            </div>
         </div>
     </div>
 </template>
