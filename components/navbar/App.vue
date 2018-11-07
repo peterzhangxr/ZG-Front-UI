@@ -2,7 +2,11 @@
     <div class="zg-navbar__container">
         <div class="zg-navbar zg-navbar__fixed" :class="{'zg-navbar__fixed': fixed, 'zg-navbar__redpacket': redpacket}">
             <div v-for="(item, index) of items" class="zg-navbar__item" :class="{'zg-navbar__item__active': index == current }" @click="handleClick(item, index)">
-                <div class="zg-navbar__text">{{item.label ? item.label : item}}</div>
+                <slot v-bind:item="item">
+                    <div class="zg-navbar__text">
+                        {{item.label ? item.label : item}}
+                    </div>
+                </slot>
             </div>
         </div>
     </div>
