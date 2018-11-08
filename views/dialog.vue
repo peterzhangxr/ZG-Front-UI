@@ -16,7 +16,7 @@
             //    defaultValue: '10'
             //})
             this.$calendar({
-                defaultValue: '2018-12-01',
+                defaultValue: ['2018-12-01'],
                 enableDate: ['2018-12-01', '2018-12-05', '2018-12-07', '2019-01-05']
             })
             //this.$dialog()

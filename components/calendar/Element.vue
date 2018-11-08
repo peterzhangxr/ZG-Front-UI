@@ -24,7 +24,7 @@
             <div class="zg-calendar__week__cell">六</div>
         </div>
         <div class="zg-calendar__day">
-            <div v-for="item of data.children" class="zg-calendar__day__cell" :class="{'zg-calendar__day__disabled': item.disabled, 'opacity': item.day == 0, 'zg-calendar__today': item.date == current}" >
+            <div v-for="item of data.children" class="zg-calendar__day__cell" :class="{'zg-calendar__day__disabled': item.disabled, 'opacity': item.day == 0, 'zg-calendar__today': value.indexOf(item.date) > -1}" >
                 <div @click="handleClick(item)" class="zg-calendar__day__text">
                     <div class="zg-calendar__day__title">{{item.day}}</div>
                     <!--<div class="zg-calendar__day__subtitle">初一</div>-->
@@ -36,8 +36,12 @@
 <script>
     export default {
         props: {
-            index: Number,
-            value: String,
+            value: {
+                type: Array,
+                default: () => {
+                    return []
+                }
+            },
             data: {
                 type: Object,
                 default: null
@@ -49,15 +53,20 @@
         },
         data() {
             return {
-                current: this.value
+                current: []
             }
         },
         watch: {
-            value(val) {
-                this.current = val
-            },
             current(val) {
-                this.$emit('input', val)
+                let index = this.value.indexOf(val)
+                let value = this.value
+                if (index == -1) {
+                    value.push(val)
+                } else {
+                    value.splice(index, 1)
+                }
+
+                this.$emit('input', value)
             }
         },
         methods: {
@@ -65,7 +74,17 @@
                 if (item.disabled) {
                     return
                 }
-                this.current = item.date
+
+                let index = this.value.indexOf(item.date)
+                let value = this.value
+                if (index == -1) {
+                    value.push(item.date)
+                } else {
+                    value.splice(index, 1)
+                }
+
+                this.$emit('input', value.sort())
+
             },
             handleNext() {
                 if (this.swiper) {

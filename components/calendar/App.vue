@@ -38,7 +38,8 @@
             return {
                 visible: false,
                 close: () => {},
-                swiper: null
+                swiper: null,
+                current: []
             }
         },
         mounted() {

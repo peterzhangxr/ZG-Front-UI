@@ -16,8 +16,8 @@ function remove(event) {
 
 export default (options = {}) =>  {
     let date = new Date()
-    if (options.defaultValue) {
-        date = new Date(options.defaultValue)
+    if (options.defaultValue.length > 0) {
+        date = new Date(options.defaultValue[0])
     }
     let year = date.getFullYear()
     let month = date.getMonth() + 1
