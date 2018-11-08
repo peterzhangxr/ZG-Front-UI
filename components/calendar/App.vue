@@ -53,7 +53,7 @@
                 this.close()
             },
             handleSave() {
-                this.onConfirm(current)
+                this.onConfirm(this.current)
                 this.close()
             }
         },
