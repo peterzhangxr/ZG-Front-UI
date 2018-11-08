@@ -3,6 +3,8 @@
  */
 import App from './App.vue'
 import Vue from 'vue'
+import utils from './utils'
+
 const Calendar = Vue.extend(App)
 let instance
 
@@ -13,9 +15,51 @@ function remove(event) {
 }
 
 export default (options = {}) =>  {
+    let date = new Date()
+    if (options.defaultValue) {
+        date = new Date(options.defaultValue)
+    }
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+
+    options.enableDate = options.enableDate || []
+
+    let items = []
+    items.push({
+        year: year,
+        month: month,
+        date: day,
+        children: utils.getDataOfMonth(year, month, day, options.enableDate)
+    })
+
+    //检测是否有下个月
+    let [nextYear, nextMonth] = utils.getNextMonth(year, month)
+    let need = false
+    if (options.enableDate.length > 0) {
+        let _date = new Date(options.enableDate[options.enableDate.length - 1])
+        let _year = _date.getFullYear()
+        let _month = _date.getMonth() + 1
+        if (_year > year || _month > month) {
+            need = true
+        }
+    }
+
+    if (need) {
+        items.push({
+            year: nextYear,
+            month: nextMonth,
+            date: 0,
+            children: utils.getDataOfMonth(nextYear, nextMonth, 0, options.enableDate)
+        })
+    }
     if (!instance) {
         instance = new Calendar({
-            el: document.createElement('div')
+            el: document.createElement('div'),
+            data: {
+                items: items,
+                current: options.defaultValue
+            }
         })
     }
 

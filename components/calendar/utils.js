@@ -11,23 +11,24 @@ exports.getDaysOfMonth = (year, month) => {
 
 
 //获取排列数据
-exports.getDataOfMonth = (year, month, day) =>{
+exports.getDataOfMonth = (year, month, day, enableDates = []) =>{
     let days = this.getDaysOfMonth(year, month)
-    let start = new Date([year, month, '01'].join('-')).getDay()
+    let start = new Date([year, this.formatDay(month), '01'].join('-')).getDay()
 
     let data = Array.from({length: 35}).map(x => {
         return {
             day: 0,
-            disabled: false,
+            disabled: true,
             today: false
         }
     })
     for (let i = 0; i < days; i++) {
+        let date = [year, this.formatDay(month) , this.formatDay(i + 1)].join('-')
         data[start + i] = {
             day: i + 1,
-            disabled: false,
+            disabled: enableDates.indexOf(date) > -1 ? false : true,
             today: (i + 1) == day,
-            date: [year, month, formatDay(i + 1)].join('-')
+            date: date
         }
     }
 

@@ -46,7 +46,6 @@
             }
         },
         mounted() {
-            console.log(this.defaultValue)
             let data = Array.from({length: 35}).map(x => '0')
             let start = 1
             for (let i = 1; i <= 31; i++) {
