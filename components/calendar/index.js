@@ -65,6 +65,8 @@ export default (options = {}) =>  {
 
     if (instance.visible) return
 
+    instance.onConfirm = options.onConfirm || (() => {})
+
     instance.close = () => {
         instance.visible = false
         instance.$el.addEventListener('transitionend', remove);

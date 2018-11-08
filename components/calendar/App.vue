@@ -5,9 +5,9 @@
             <div class="zg-calendar zg-calendar__primary">
                 <div class="zg-calendar__hd">
                     <div class="zg-picker__hd">
-                        <button class="zg-btn zg-btn__default zg-btn__flat text-default">取消</button>
+                        <button @click="handleCancel" class="zg-btn zg-btn__default zg-btn__flat text-default">取消</button>
                         <div class="zg-picker__spacer text-default">选择日期</div>
-                        <button class="zg-btn zg-btn__primary zg-btn__flat">确定</button>
+                        <button @click="handleSave" class="zg-btn zg-btn__primary zg-btn__flat">确定</button>
                     </div>
                 </div>
                 <div class="zg-calendar__bd">
@@ -28,6 +28,12 @@
     import Element from './Element.vue'
     import Swiper from 'swiper'
     export default{
+        props: {
+            onConfirm: {
+                type: Function,
+                default: () => {}
+            }
+        },
         data(){
             return {
                 visible: false,
@@ -44,6 +50,10 @@
         },
         methods: {
             handleCancel() {
+                this.close()
+            },
+            handleSave() {
+                this.onConfirm(current)
                 this.close()
             }
         },
