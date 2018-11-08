@@ -21,11 +21,9 @@ export default (options = {}) =>  {
     }
 
     if (instance.visible) return
-    console.log(instance)
 
-    instance.defaultValue = options.defaultValue || ''
+    instance.day = instance.defaultValue = options.defaultValue || ''
     instance.onConfirm = options.onConfirm || (() => {})
-    console.log(instance)
 
     instance.close = () => {
         instance.visible = false

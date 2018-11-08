@@ -58,9 +58,12 @@ export default (options = {}) =>  {
             el: document.createElement('div'),
             data: {
                 items: items,
-                current: options.defaultValue
+                current: JSON.parse(JSON.stringify(options.defaultValue))
             }
         })
+    } else {
+        instance.items = items
+        instance.current = JSON.parse(JSON.stringify(options.defaultValue))
     }
 
     if (instance.visible) return
