@@ -7,7 +7,7 @@
                     <div class="zg-picker__hd">
                         <button @click="handleCancel" class="zg-btn zg-btn__default zg-btn__flat text-default">取消</button>
                         <div class="zg-picker__spacer"></div>
-                        <button @click="handleConfirm" class="zg-btn zg-btn__purple bold zg-btn__flat">确定</button>
+                        <button @click="handleConfirm" class="zg-btn zg-btn__primary text-purple bold zg-btn__flat">确定</button>
                     </div>
 
                 </div>
