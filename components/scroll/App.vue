@@ -1,7 +1,7 @@
 <template>
     <div v-infinite-scroll="onScroll" infinite-scroll-disabled="loading" class="zg-scroll" infinite-scroll-immediate-check="true">
         <template v-for="(item, index) of data">
-            <slot v-bind:item="item"></slot>
+            <slot v-bind:item="item" v-bind:index="index"></slot>
         </template>
         <div v-if="loading && !loaded" class="zg-scroll__spinner">
             <Spinner :size="size" color="light"></Spinner>
