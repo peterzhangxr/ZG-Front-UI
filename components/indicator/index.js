@@ -37,6 +37,11 @@ export default {
         if (instance) {
             instance.visible = false
             instance.$el.addEventListener('transitionend', remove);
+            setTimeout(() => {
+                if (instance.$el.parentNode) {
+                    instance.$el.parentNode.removeChild(instance.$el)
+                }
+            }, 500)
         }
     }
 
