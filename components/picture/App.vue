@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <photo-swipe v-model="visible" :current="current" :remove="upload" :images.sync="images"></photo-swipe>
+        <photo-swipe v-model="visible" :current="current" :remove="remove" :images.sync="images"></photo-swipe>
     </div>
 </template>
 <script>
@@ -39,6 +39,7 @@
                 default: 3
             },
             upload: Boolean,
+            remove: Boolean,
             onUpload: {
                 type: Function,
                 default: () => {}
