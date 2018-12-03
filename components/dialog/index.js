@@ -45,6 +45,7 @@ export default (options = {}, ok = () => {}, cancel = () => {}) =>  {
     if (options.content) {
         instance.content = options.content
     }
+    instance.tagClose = options.tagClose || false
 
     instance.close = () => {
         instance.visible = false
