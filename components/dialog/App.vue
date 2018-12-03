@@ -1,6 +1,6 @@
 <template>
     <div class="zg-dialog__container">
-        <div class="zg-overlay" :class="{'zg-overlay__active': visible}" @click="handleTagClose"></div>
+        <div class="zg-overlay" :class="{'zg-overlay__active': visible}" @click="handleTapClose"></div>
         <div class="zg-dialog" :class="{'zg-dialog__active': visible}">
             <div class="zg-card">
                 <div class="zg-card__title">{{ title }}</div>
@@ -48,7 +48,7 @@
                 type: Function,
                 default: () => {}
             },
-            tagClose: Boolean
+            tapClose: Boolean
         },
         data(){
             return {
@@ -65,8 +65,8 @@
                 this.close()
                 this.onCancel()
             },
-            handleTagClose() {
-                this.tagClose && this.close()
+            handleTapClose() {
+                this.tapClose && this.close()
             }
         }
     }
