@@ -14,6 +14,15 @@
             <div class="zg-guide__share__upgrade" v-if="type == 'share_upgrade'">
                 <div class="zg-guide__share__upgrade__box"></div>
             </div>
+            <div class="zg-guide__share__text" v-if="type == 'share_text'">
+                <div class="zg-guide__share__text__box">
+                    <div class="text" v-html="content">请点击右上角</div>
+                </div>
+                <div class="zg-guide__share__text__tip">
+                    点击右上角<br/>
+                    分享至好友或朋友圈
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -21,7 +30,8 @@
 <script>
     export default {
         props: {
-            type: String
+            type: String,
+            content: String
         },
         data(){
             return {

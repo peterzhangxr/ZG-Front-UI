@@ -23,6 +23,9 @@
             }
         },
         components:{
+        },
+        mounted() {
+            this.$guide('share_text')
         }
     }
 </script>

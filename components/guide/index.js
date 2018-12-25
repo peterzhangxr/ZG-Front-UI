@@ -21,7 +21,8 @@ export default (options) =>  {
 
     if (instance.visible) return
 
-    instance.type = typeof options === 'string' ? options : options.type
+    instance.type = typeof options === 'string' ? options : options.type,
+    instance.content = options.content || ''
     instance.close = () => {
         instance.visible = false
         instance.$el.addEventListener('transitionend', remove);
