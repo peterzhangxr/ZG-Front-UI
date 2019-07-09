@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="page__hd">
-            <h1>Form {{mobile}}</h1>
+            <h1>Form {{mobile}}{{counter}}</h1>
         </div>
         <div class="page__bd">
             <z-cell-title warning>请绑定持卡人本人的银行卡</z-cell-title>
@@ -13,7 +13,7 @@
                     <z-input type="text" v-model="mobile" placeholder="这是提示文字"></z-input>
                 </z-form-item>
                 <z-form-item label="电话号码">
-                    <z-input type="text" placeholder="这是提示文字"></z-input>
+                    <z-counter :min="1" :max="10" input v-model="counter"></z-counter>
                 </z-form-item>
                 <z-form-item label="电话号码">
                     <z-form-item-ft slot="ft">
@@ -45,7 +45,8 @@
         data(){
             return {
                 select: '',
-                mobile: '170'
+                mobile: '170',
+                counter: 11
             }
         },
         components:{
