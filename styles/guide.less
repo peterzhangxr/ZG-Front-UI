@@ -1,12 +1,15 @@
 .@{prefix}-guide {
     position: fixed;
-    z-index: @dialog-default-index + 100;
+    z-index: 2001;
     transition: opacity .3s;
     width: 100%;
     opacity: 0;
     left: 0;
     top: 0;
     height: 100vh;
+    .@{prefix}-overlay {
+        z-index: 2000!important;
+    }
     &__share__out {
         width: 100%;
         padding: 2.933vw 3.59vh 0 0;
