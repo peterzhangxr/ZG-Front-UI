@@ -1,5 +1,6 @@
 <template>
     <div v-infinite-scroll="onScroll" infinite-scroll-disabled="loading" class="zg-scroll" infinite-scroll-immediate-check="true">
+        <slot name="single"></slot>
         <template v-for="(item, index) of data">
             <slot v-bind:item="item" v-bind:index="index"></slot>
         </template>
