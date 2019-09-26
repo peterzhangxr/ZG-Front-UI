@@ -131,12 +131,13 @@
                     counterEl: true,
                     arrowEl: false,
                     preloaderEl: false,
+
                     /*
                     isClickableElement: function(el) {
                         return el.tagName === 'IMG';
                     },*/
 
-                    tapToClose: true,
+                    //tapToClose: true,
 
                     tapToToggleControls: false,
                     bgOpacity: 0.9,
