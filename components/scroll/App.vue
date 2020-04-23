@@ -8,6 +8,10 @@
             <Spinner :size="size" color="light"></Spinner>
             <div class="zg-scroll__spinner--text">{{ text }}</div>
         </div>
+
+        <div v-if="!loading && !loaded && data.length >= 15" @click="onScroll" class="loadmore">
+            <slot name="loadmore">点击加载更多</slot>
+        </div>
     </div>
 </template>
 
@@ -55,3 +59,11 @@
         }
     }
 </script>
+<style lang="less" scoped>
+    .loadmore {
+        color: #c3c3c3;
+        font-size: 14px;
+        padding: 16px 0;
+        text-align: center;
+    }
+</style>
