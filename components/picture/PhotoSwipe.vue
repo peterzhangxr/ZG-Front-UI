@@ -132,10 +132,10 @@
                     arrowEl: false,
                     preloaderEl: false,
 
-                    /*
+
                     isClickableElement: function(el) {
                         return el.tagName === 'IMG';
-                    },*/
+                    },
 
                     //tapToClose: true,
 
